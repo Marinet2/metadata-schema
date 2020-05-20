@@ -61,7 +61,7 @@ publisher_email: # The data publisher's email.
                  # The publisher may be an individual or an institution.
 publisher_url: # The data publisher's url.
                # The publisher may be an individual or an institution.
-citation: # info on how to cite dataset
+citation: # The citation to be used in publications using the dataset.
 update_interval : # in case if dataset is periodically updated (i.e., if this is dynamic dataset) otherwise leave it empty
 
 ######################
