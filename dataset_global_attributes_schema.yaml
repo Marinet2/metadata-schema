@@ -126,7 +126,7 @@ history: # Provides an audit trail for modifications to the original data.
          # modification name, and modification arguments. The time stamp must be specified as a string according to the ISO8601 standard: "YYYY-MM-DDThh:mm:ssZ”.
 
 processing_level: # Level of processing and quality control applied to data. This probably cannot be generic and it will depend on the community.
-                  # For example in case of lidars these are levels:
+                  # For example in case of lidars these levels are:
                   # LEVEL 0: Backscatter signal
                   # LEVEL 1A: Individual Doppler spectra
                   # LEVEL 1B: QC (i.e. filtered) Individual Doppler spectra
