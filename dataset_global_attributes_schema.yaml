@@ -7,10 +7,10 @@ title: # Title of dataset to be inserted here
 summary: # Short summary of dataset
 
 keywords: # keywords that further explains dataset provided as list: ['keyword 1', 'keyword 2', ..., 'keyword N']
-          # keywords ideally should be sources from an established/community-driven vocabulary of terms
+          # keywords ideally should be sourced from an established/community-driven vocabulary of terms
           # alternatively instead of keywords you could provide resolvable URIs of keywords, e.g. :
           # instead of writing 'wind direction', one can provide URI instead http://vocab.nerc.ac.uk/collection/P09/current/WDIR/
-keywords_vocabulary: # when some or all keywords are sources from restricted vocabularies provide a list of
+keywords_vocabulary: # when some or all keywords are sourced from restricted vocabularies provide a list of
                      # URI's to the restricted vocabularies from where the keywords are sourced.
                      # e.g.: ['http://cfconventions.org/Data/cf-standard-names/71/build/cf-standard-name-table.html', 'http://data.windenergy.dtu.dk/taxonomy/', 'http://vocab.nerc.ac.uk/collection/P09/current/']
 
