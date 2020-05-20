@@ -47,8 +47,7 @@ data_mode : # This attribute can take one of following values: "Raw", "Provision
 ## Publication information ##
 #############################
 license: # licence that specifies usage and distribution of dataset
-distribution_statement: # notation that marks dataset according to its security classification
-                        # to ensure it is circulated only among the authorized recipients.
+distribution_statement: # notation that marks dataset according to its security classification to ensure it is circulated only among the authorized recipients.
                         # Potentially the distribution statement could look like this:
                         # Statement A : Approved for public release; distribution is unlimited.
                         # Statement B : Distribution authorized to (insert authorized entities) only; (fill in reason); (date of determination). Other requests for this document shall be referred to (insert controlling government office).
@@ -69,7 +68,6 @@ update_interval : # in case if dataset is periodically updated (i.e., if this is
 format_version: # format version of NetCDF (e.g., marinet2 NetCDF 2.1)
 conventions: # all conventions used for naming of variables and dimensions, though actually
 netcdf_version: # specifies version of netcdf file
-netcdf_format:
 
 #################################
 ## Spatio-temporal information ##
