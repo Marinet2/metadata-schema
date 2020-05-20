@@ -44,7 +44,6 @@ data_mode : # This attribute can take one of following values: "Raw", "Provision
             # Delayed-mode data represents data published after all calibrations and quality control procedures have been applied on the internally recorded or best available original data. This is the best possible version of processed data.
             # Mixed data indicates that the dataset contains data in more than one of the above states.
 
-data_type:
 #############################
 ## Publication information ##
 #############################
@@ -107,11 +106,33 @@ spatial_z_units: # insert units for z
 spatial_z_resolution: # insert resolution for z (optional)
 
 # temporal coverage information
-time_coverage_start: # Start date of the data in UTC. Time must be specified as a string according to the ISO8601 standard: "YYYY-MM- DDThh:mm:ssZ”.
-time_coverage_end: # Final date of the data in UTC. Time must be specified as a string according to the ISO8601 standard: "YYYY-MM- DDThh:mm:ssZ”.
+time_coverage_start: # Start date of the data in UTC. Time must be specified as a string according to the ISO8601 standard: "YYYY-MM-DDThh:mm:ssZ”.
+time_coverage_end: # Final date of the data in UTC. Time must be specified as a string according to the ISO8601 standard: "YYYY-MM-DDThh:mm:ssZ”.
 time_coverage_resolution: #Interval between records. ISO8601 standard must be used: PnYnMnDTnHnMnS.
 time_coverage_duration: #Duration of the time coverage of the data. ISO8601 standard must be used: PnYnMnDTnHnMnS.
 
 #####################
 ## Data provenance ##
 #####################
+date_created: # The date on which the data file was created.
+              # Version date and time for the data contained in the file. (UTC).
+              # Time must be specified as a string according to the ISO8601 standard: "YYYY-MM- DDThh:mm:ssZ”.
+date_modified: # The date on which the data file was last modified. Time must be specified as a string according to the ISO8601 standard:
+               # "YYYY-MM-DDThh:mm:ssZ”
+date_update: # Timestamp specifying when the contents (i.e. its attributes and/or values)
+             # of the file were last changed Time must be specified as a string according to the ISO8601 standard: "YYYY-MM-DDThh:mm:ssZ”
+history: # Provides an audit trail for modifications to the original data.
+         # It should contain a separate line for each modification, with each line beginning with a timestamp, and including user name,
+         # modification name, and modification arguments. The time stamp must be specified as a string according to the ISO8601 standard: "YYYY-MM-DDThh:mm:ssZ”.
+
+processing_level: # Level of processing and quality control applied to data. This probably cannot be generic and it will depend on the community.
+                  # For example in case of lidars these are levels:
+                  # LEVEL 0: Backscatter signal
+                  # LEVEL 1A: Individual Doppler spectra
+                  # LEVEL 1B: QC (i.e. filtered) Individual Doppler spectra
+                  # LEVEL 1C: QC Averaged Doppler spectra
+                  # LEVEL 2A: Estimated non-averaged radial velocity
+                  # LEVEL 2B: Estimated non-averaged QC radial velocity
+                  # LEVEL 2C: Estimated averaged QC radial velocity
+                  # LEVEL 3: Reconstructed wind
+                  # LEVEL 4: Extracted flow related parameters (e.g., wind turbine wake width)
