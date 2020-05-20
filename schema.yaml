@@ -33,24 +33,43 @@ contributor_role: # an order list of specific roles contributor had in the datas
 project_name: # a list of projects which provided funding for the dataset generation
 project_id: # a list of project numbers which are identifiable in for example OpenAIER
             # this list is ordered according project_name metadata
-project_url: # an ordered list of project landing pages
+project_url: # an ordered list of projects' landing pages
+
+
+data_mode : # This attribute can take one of following values: "Raw", "Provisional", "Delayed-mode" or "Mixed", where:
+            # Raw represents unprocessed data.
+            # Provisional data means that some calibrations or editing on data may have been done, but the data is not thought to be fully processed. Refer to the history attribute for more detailed information.
+            # Delayed-mode data represents data published after all calibrations and quality control procedures have been applied on the internally recorded or best available original data. This is the best possible version of processed data.
+            # Mixed data indicates that the dataset contains data in more than one of the above states.
+
 
 #############################
 ## Publication information ##
 #############################
-license:
-distribution_statement:
-publisher_name:
-publisher_email:
-publisher_url:
+license: # licence that specifies usage and distribution of dataset
+distribution_statement: # notation that marks dataset according to its security classification
+                        # to ensure it is circulated only among the authorized recipients.
+                        # Potentially the distribution statement could look like this:
+                        # Statement A : Approved for public release; distribution is unlimited.
+                        # Statement B : Distribution authorized to (insert authorized entities) only; (fill in reason); (date of determination). Other requests for this document shall be referred to (insert controlling government office).
+                        # Statement C : Distribution authorized to (insert authorized entities) and their contractors; (fill in reason); (date of determination). Other requests for this document shall be referred to (insert controlling government office).
+
+publisher_name: # The data publisher's name.
+                # The publisher may be an individual or an institution.
+publisher_email: # The data publisher's email.
+                 # The publisher may be an individual or an institution.
+publisher_url: # The data publisher's url.
+               # The publisher may be an individual or an institution.
 citation: # info on how to cite dataset
-update_interval : # in case this dataset is periodically updated (i.e., if this is dynamic dataset) otherwise leave it empty
+update_interval : # in case if dataset is periodically updated (i.e., if this is dynamic dataset) otherwise leave it empty
 
 ######################
 ## Used conventions ##
 ######################
 format_version: # format version of NetCDF (e.g., marinet2 NetCDF 2.1)
 conventions: # all conventions used for naming of variables and dimensions, though actually
+netcdf_version: # specifies version of netcdf file
+netcdf_format:
 
 #################################
 ## Spatio-temporal information ##
