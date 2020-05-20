@@ -44,7 +44,7 @@ data_mode : # This attribute can take one of following values: "Raw", "Provision
             # Delayed-mode data represents data published after all calibrations and quality control procedures have been applied on the internally recorded or best available original data. This is the best possible version of processed data.
             # Mixed data indicates that the dataset contains data in more than one of the above states.
 
-
+data_type:
 #############################
 ## Publication information ##
 #############################
@@ -75,7 +75,42 @@ conventions: # all conventions used for naming of variables and dimensions, coul
 #################################
 ## Spatio-temporal information ##
 #################################
+# top level description
+feature_type: # Description of the spatio-temporal shape of the data held in the netCDF using a vocabulary specified in CF 1.6.
+cdm_data_type: # The Unidata CDM (common data model) data type used by THREDDS. e.g. point, profile, section, station, station_profile, trajectory, grid, radial, swath, image; use Grid for gridded HFR data. Recommended.
 
+# spatial coverage information
+reference_system: # Either specify coordinate system in a form of "EPSG:epsg_code" or write "CUSTOM"
+coordinate_mapping: # specifies how relative x, y and z coordinates are mapped to absolute one, if reference_system: "CUSTOM" then coordinate_mapping can be dropped
+  - name: "x"
+    value: # insert to what abs coordinate it is mapped, if reference_system: "EPSG:4326"
+           # value will be set to "longitude"
+  - name: "y"
+    value: # insert to what abs coordinate it is mapped, if reference_system: "EPSG:4326"
+           # value will be set to "latitude"
+  - name: "z"
+    value: # it can be either 'height' or 'depth'
+
+spatial_x_min: # insert min x
+spatial_x_max: # insert max x
+spatial_x_units: # insert units for x
+spatial_x_resolution: # insert resolution for x (optional)
+
+spatial_y_min: # insert min y
+spatial_y_max: # insert may y
+spatial_y_units: # insert units for y
+spatial_y_resolution: # insert resolution for y (optional)
+
+spatial_z_min: # insert min z
+spatial_z_max: # insert maz z
+spatial_z_units: # insert units for z
+spatial_z_resolution: # insert resolution for z (optional)
+
+# temporal coverage information
+time_coverage_start: # Start date of the data in UTC. Time must be specified as a string according to the ISO8601 standard: "YYYY-MM- DDThh:mm:ssZ”.
+time_coverage_end: # Final date of the data in UTC. Time must be specified as a string according to the ISO8601 standard: "YYYY-MM- DDThh:mm:ssZ”.
+time_coverage_resolution: #Interval between records. ISO8601 standard must be used: PnYnMnDTnHnMnS.
+time_coverage_duration: #Duration of the time coverage of the data. ISO8601 standard must be used: PnYnMnDTnHnMnS.
 
 #####################
 ## Data provenance ##
