@@ -50,8 +50,9 @@ license: # licence that specifies usage and distribution of dataset
 distribution_statement: # notation that marks dataset according to its security classification to ensure it is circulated only among the authorized recipients.
                         # Potentially the distribution statement could look like this:
                         # Statement A : Approved for public release; distribution is unlimited.
-                        # Statement B : Distribution authorized to (insert authorized entities) only; (fill in reason); (date of determination). Other requests for this document shall be referred to (insert controlling government office).
-                        # Statement C : Distribution authorized to (insert authorized entities) and their contractors; (fill in reason); (date of determination). Other requests for this document shall be referred to (insert controlling government office).
+                        # Statement B : Approved for public release; distribution is defined by license.
+                        # Statement C : Distribution authorized to (insert authorized entities) only; (fill in reason); (date of determination). Other requests for this document shall be referred to (insert controlling government office).
+                        # Statement D : Distribution authorized to (insert authorized entities) and their contractors; (fill in reason); (date of determination). Other requests for this document shall be referred to (insert controlling government office).
 
 publisher_name: # The data publisher's name.
                 # The publisher may be an individual or an institution.
@@ -65,9 +66,9 @@ update_interval : # in case if dataset is periodically updated (i.e., if this is
 ######################
 ## Used conventions ##
 ######################
-format_version: # format version of NetCDF (e.g., marinet2 NetCDF 2.1)
-conventions: # all conventions used for naming of variables and dimensions, though actually
-netcdf_version: # specifies version of netcdf file
+format_version: # data format version (could be for example marinet2 NetCDF 2.1), potentially it could be a resolvable URI
+metadata_schema: # indicates schema used to format/describe metadata, potentially it could be a resolvable URI
+conventions: # all conventions used for naming of variables and dimensions, could be a list of resolbable URIs provided as a list
 
 #################################
 ## Spatio-temporal information ##
