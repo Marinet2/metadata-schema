@@ -8,26 +8,28 @@ summary: # Short summary of dataset
 
 keywords: # keywords that further explains dataset provided as list: ['keyword 1', 'keyword 2', ..., 'keyword N']
           # keywords ideally should be sources from an established/community-driven vocabulary of terms
-keywords_vocabulary: # in case when keywords are sources from restricted vocabularies it is advisable to
-                     # provide a list of URI's to the restricted vocabularies from where the keywords are sourced,
-                     # e.g.: ['http://cfconventions.org/Data/cf-standard-names/71/build/cf-standard-name-table.html', 'http://data.windenergy.dtu.dk/taxonomy/']
+          # alternatively instead of keywords you could provide resolvable URIs of keywords, e.g. :
+          # instead of writing 'wind direction', one can provide URI instead http://vocab.nerc.ac.uk/collection/P09/current/WDIR/
+keywords_vocabulary: # when some or all keywords are sources from restricted vocabularies provide a list of
+                     # URI's to the restricted vocabularies from where the keywords are sourced.
+                     # e.g.: ['http://cfconventions.org/Data/cf-standard-names/71/build/cf-standard-name-table.html', 'http://data.windenergy.dtu.dk/taxonomy/', 'http://vocab.nerc.ac.uk/collection/P09/current/']
 
-dataset_id: # unique and persistent identifier of dataset, it could be for example DOI
-dataset_id_authority: # an URI of the authority body that generated dataset_id (this is optional metadata)
+dataset_id: # unique and persistent identifier of dataset, e.g. DOI
+dataset_id_authority: # an URI of the authority body that generated dataset_id
 
-infrastructure_id: # a list of PIDs (could be URIs) to virtual (models, HPC) or physical (instruments) infrastructure(s) which generated dataset
+infrastructure_id: # a list of PIDs or URIs (in the worst case infrastructure names) to virtual (models, HPC) or physical (instruments) infrastructure(s) which generated dataset
 site: # location where data was created, this is mandatory only for measurements datasets otherwise it can be dropped
 
 creator_name: # an ordered list of FirstName LastName of those whose created the dataset (order according to the level of contributions)
-creator_email: # an ordered list of creators' email addresses
-creator_id: # an order list of creators' ORCID IDs, if IDs are missing input empty string
-creator_role: # an order list of specific roles contributor had in the dataset creation
+creator_email: # a list of creators' email addresses which follows the order of creator_name
+creator_id: # a list of creators' ORCID IDs which follows the order of creator_name, if IDs are missing input empty string
+creator_role: # a list of list of roles creators (which follows the order of creator_name list) had in the dataset creation
               # roles are described by CredIT taxonomy: https://like-itn-digitalization.readthedocs.io/en/latest/1_research_lifecycle/#roles-in-lifecycle
 
 contributor_name: # an ordered list of FirstName LastName of those whose contributor to the creation of dataset (order according to the level of contributions)
 contributor_email: # an ordered list of contributor email addresses
 contributor_id: # an order list of contributor ORCID IDs, if IDs are missing input empty string
-contributor_role: # an order list of specific roles contributor had in the dataset creation
+contributor_role: # a list of list of roles contributors (which follows the order of creator_name list) had in the dataset creation
                   # roles are described by CredIT taxonomy: https://like-itn-digitalization.readthedocs.io/en/latest/1_research_lifecycle/#roles-in-lifecycle
 
 project_name: # a list of projects which provided funding for the dataset generation
@@ -66,9 +68,9 @@ update_interval : # in case if dataset is periodically updated (i.e., if this is
 ######################
 ## Used conventions ##
 ######################
-format_version: # data format version (could be for example marinet2 NetCDF 2.1), potentially it could be a resolvable URI
-metadata_schema: # indicates schema used to format/describe metadata, potentially it could be a resolvable URI
-conventions: # all conventions used for naming of variables and dimensions, could be a list of resolbable URIs provided as a list
+format_version: # data format version (could be for example "marinet2 NetCDF 2.1" or a resolvable URI)
+metadata_schema: # indicates schema used to format/describe metadata, ideally it should be a resolvable URI
+conventions: # all conventions used for naming of variables and dimensions, could be a list of resolvable URIs provided as a list
 
 #################################
 ## Spatio-temporal information ##
