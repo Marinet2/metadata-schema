@@ -114,7 +114,7 @@ time_coverage_duration: #Duration of the time coverage of the data. ISO8601 stan
 #####################
 ## Data provenance ##
 #####################
-date_created: # The date on which the data file was created.
+date_create: # The date on which the data file was created.
               # Version date and time for the data contained in the file. (UTC).
               # Time must be specified as a string according to the ISO8601 standard: "YYYY-MM- DDThh:mm:ssZ”.
 date_update: # Timestamp specifying when the contents (i.e. its attributes and/or values)
