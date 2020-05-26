@@ -1,4 +1,40 @@
-concept_id: # id of concept which will be used to link it to the web-hosted vocabularies
-            # ideally represneted as 4-character-capitalized-letters
-concept_URI: # resolvable URI to the concept which will host definition
+##################################
+## Discovery and identification ##
+##################################
+short_name: # Short name of variable
+standard_name: # Variable/data stream standard name, see CF convention table for standard_name
+long_name: # Long name of variable
+alt_name: # List of alternative names of variables from known vocabularies.
+          # This should boost data re-use by broader community.
+concept_id: # Id of concept (i.e., variable) which will be used to link it to the web-hosted vocabularies
+concept_URI: # Link to the concept definition (i.e., a link to a web-hosted vocabulary)
 
+######################
+## Values and units ##
+######################
+dtype: # Type of data stored in the variables (e.g., int, float or double)
+units: # Variable units
+valid_min: # Minimum allowed value
+valid_max: # Maximum allowed value
+valid_range: # Range expressed as [valid_min, valid_max] when variable is continuous
+allowed_values: # List of specific values that the variable can take in case it is discreet
+uncertainty: # Uncertainty of variable values
+_FillValue: # Fill values must be chosen according to the variable data type (int, float, double)
+            # typically it is set to NaN considering that the majority of our variables are floats
+
+#############################
+## Scaling and compression ##
+#############################
+add_offset: # Offset value to be added to all the values of the variable.
+            # This is used to save space by switching from float to int
+scale_factor: # Scaling value to be multiplied to all the values of the variable
+              # This is used to save space by switching from float to int
+compression_level: # Level of compression of variables
+compression_type:  # Compression type
+
+######################
+## Misc information ##
+######################
+ancillary_variables: # short_name of the flag channel for the variable.
+                     # The list of all related QC variables must be indicated.
+related_variables: # List of related variables in the dataset, provided as short_name(s)
