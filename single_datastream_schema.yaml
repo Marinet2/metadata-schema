@@ -21,10 +21,6 @@ allowed_values: # List of specific values that the variable can take in case it 
 uncertainty: # Uncertainty of variable values
 _FillValue: # Fill values must be chosen according to the variable data type (int, float, double)
             # typically it is set to NaN considering that the majority of our variables are floats
-
-#############################
-## Scaling and compression ##
-#############################
 add_offset: # Offset value to be added to all the values of the variable.
             # This is used to save space by switching from float to int
 scale_factor: # Scaling value to be multiplied to all the values of the variable
