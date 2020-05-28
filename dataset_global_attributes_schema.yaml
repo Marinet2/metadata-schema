@@ -16,6 +16,8 @@ keywords_vocabulary: # when some or all keywords are sourced from restricted voc
 
 dataset_id: # unique and persistent identifier of dataset, e.g. DOI
 dataset_id_authority: # an URI of the authority body that generated dataset_id
+is_part_of: # in case a dataset is a part of data collection, provide data collection DOI/URI
+is_related_to: # DOI (URI) to a related resources (e.g., if a dataset is split to multiple files this element holds links/files names of remaining files)
 
 infrastructure_id: # a list of PIDs or URIs (in the worst case infrastructure names) to virtual (models, HPC) or physical (instruments) infrastructure(s) which generated dataset
 site: # location where data was created, this is mandatory only for measurements datasets otherwise it can be dropped
