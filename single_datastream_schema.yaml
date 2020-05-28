@@ -8,6 +8,8 @@ alt_name: # List of alternative names of variables from known vocabularies.
           # This should boost data re-use by broader community.
 concept_id: # Id of concept (i.e., variable) which will be used to link it to the web-hosted vocabularies
 concept_URI: # Link to the concept definition (i.e., a link to a web-hosted vocabulary)
+is_part_of: # URI/ID of dataset to which data stream belongs to
+is_related_to: # List of related variables in the dataset, provided as short_name(s)
 
 ######################
 ## Values and units ##
@@ -25,12 +27,7 @@ add_offset: # Offset value to be added to all the values of the variable.
             # This is used to save space by switching from float to int
 scale_factor: # Scaling value to be multiplied to all the values of the variable
               # This is used to save space by switching from float to int
-compression_level: # Level of compression of variables
 compression_type:  # Compression type
+compression_level: # Level of compression of variables
 
-######################
-## Misc information ##
-######################
-ancillary_variables: # short_name of the flag channel for the variable.
-                     # The list of all related QC variables must be indicated.
-related_variables: # List of related variables in the dataset, provided as short_name(s)
+
