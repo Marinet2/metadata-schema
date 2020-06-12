@@ -174,9 +174,15 @@ data_mode : 'insert_data_mode'
 ########################### Publication information ###########################
 ###############################################################################
 
-# Licence that specifies usage of dataset.
+# Licence that specifies usage of dataset. You must provide the license since
+# without it end-users do not have information on how they can use your data.
+# You could provide a full text of license, which would be a case if your
+# dataset has a special data usage license. However, in majority of cases you
+# will use Create Commons license, which in this case you can provide the
+# license name (e.g., CC BY 4.0 International).
+# Alternately, provide a URL to the license.
 # Attribute: mandatory
-# Input type: text defined by license, ID or license or URL to license
+# Input type: text defined by license, license ID or license URL
 license: 'insert_license'
 
 # Notation that marks dataset according to its security classification to ensure
@@ -194,19 +200,38 @@ license: 'insert_license'
 # their contractors; (fill in reason); (date of determination). Other requests
 # for this document shall be referred to (insert controlling government office).
 #
+# Attribute: optional
+# Input type: free text
+distribution_statement: 'insert_distribution_statement'
+
+# The data publisher's name. The publisher may be an individual or an institution.
 # Attribute: mandatory
 # Input type: free text
-distribution_statement: 'distribution_statement'
+publisher_name: 'insert_publisher_name'
 
-publisher_name: # The data publisher's name.
-                # The publisher may be an individual or an institution.
-publisher_email: # The data publisher's email.
-                 # The publisher may be an individual or an institution.
-publisher_url: # The data publisher's url.
-               # The publisher may be an individual or an institution.
-citation: # The citation to be used in publications using the dataset.
-update_interval : # in case if dataset is periodically updated (i.e., if this is dynamic dataset) otherwise leave it empty
+# The data publisher's email.
+# The publisher email may be an individual or of an institution.
+# Attribute: recommended
+# Input type: free text
+publisher_email: 'insert_publisher_email'
 
+# The data publisher's url.
+# The publisher may be an individual or an institution.
+# Attribute: recommended
+# Input type: free text
+publisher_url: 'insert_publisher_url'
+
+# The citation to be used in publications using the dataset.
+# The explicit text stating how to cite the dataset.
+# Attribute: optional
+# Input type: free text
+citation: 'insert_citation_text'
+
+# In case if dataset is periodically updated (i.e., if this is dynamic dataset)
+# it is important to provide information on how frequently dataset is updated.
+# Attribute: mandatory for dynamic datasets otherwise optional
+# Input type: ISO8601 standard must be used: PnYnMnDTnHnMnS.
+update_interval : 'insert_update_interval_as_PnYnMnDTnHnMnS'
 
 
 ###############################################################################
