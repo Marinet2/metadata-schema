@@ -6,11 +6,13 @@
 # A dataset should have a concise title.
 # Follow the same approach like in giving titles to journal articles.
 # Attribute: mandatory
+# Input type: free text
 title: 'insert_title'
 
 # A dataset should have a descriptive summary allowing users to understand
 # better what the dataset is about and for what it can be used for.
 # Attribute: mandatory
+# Input type: free text
 summary: 'insert_summary'
 
 # Dataset keywords are similar like journal paper keywords. They highlight
@@ -18,6 +20,7 @@ summary: 'insert_summary'
 # from control vocabularies which are used by communities.
 # Keywords should be provided as a list.
 # Attribute: mandatory
+# Input type: free text or terms from controlled vocabulary
 keywords: ['insert_keyword_1','insert_keyword_2']
 
 
@@ -26,6 +29,7 @@ keywords: ['insert_keyword_1','insert_keyword_2']
 # keywords are sourced from. One example is taxonomy of wind energy topics:
 # 'http://data.windenergy.dtu.dk/taxonomy/'
 # Attribute: recommended
+# Input type: fixed resolvable URIs
 keywords_vocabulary: ['insert_vocab_URI_1','insert_vocab_URI_2']
 
 # To identify dataset you need to provide a unique & persistent identifier(PID).
@@ -34,55 +38,143 @@ keywords_vocabulary: ['insert_vocab_URI_1','insert_vocab_URI_2']
 # Then simply insert the reserved DOI here.
 # PIDs should be resolvable.
 # Attribute: mandatory
+# Input type: fixed resolvable PID
 dataset_id: 'insert_PID'
 
 # An URI of the authority body that generated dataset_id
 # Attribute: recommended
+# Input type: fixed resolvable URI
 dataset_id_authority: 'insert_authority_body_URL'
 
 # If dataset is a part of larger data collection is_part_of provides the
 # link to the collection. For example, data collection will have PID, such as
 # DOI. Therefore, is_part_of will contain that PID.
 # Attribute: recommended
+# Input type: fixed resolvable PID
 is_part_of: 'insert_data_collection_PID'
-
 
 # If the entire dataset is split to multiple files into multiple files
 # is_related_to holds ids of remaining files which make dataset complete.
 # The ids of remaining files could be simple as file names.
 # Attribute: mandatory (if dataset is split to multiple files)
-is_related_to: ['id_file_1', 'id_file_2']
+# Input type: fixed resolvable PIDs
+is_related_to: ['insert_id_file_1', 'insert_id_file_2']
 
-infrastructure_id: # a list of PIDs or URIs (in the worst case infrastructure names) to virtual (models, HPC) or physical (instruments) infrastructure(s) which generated dataset
-site: # location where data was created, this is mandatory only for measurements datasets otherwise it can be dropped
-
-creator_name: # an ordered list of FirstName LastName of those whose created the dataset (order according to the level of contributions)
-creator_email: # a list of creators' email addresses which follows the order of creator_name
-creator_id: # a list of creators' ORCID IDs which follows the order of creator_name, if IDs are missing input empty string
-creator_role: # a list of list of roles creators (which follows the order of creator_name list) had in the dataset creation
-              # roles are described by CredIT taxonomy: https://like-itn-digitalization.readthedocs.io/en/latest/1_research_lifecycle/#roles-in-lifecycle
-
-contributor_name: # an ordered list of FirstName LastName of those whose contributor to the creation of dataset (order according to the level of contributions)
-contributor_email: # an ordered list of contributor email addresses
-contributor_id: # an order list of contributor ORCID IDs, if IDs are missing input empty string
-contributor_role: # a list of list of roles contributors (which follows the order of creator_name list) had in the dataset creation
-                  # roles are described by CredIT taxonomy: https://like-itn-digitalization.readthedocs.io/en/latest/1_research_lifecycle/#roles-in-lifecycle
-
-project_name: # a list of projects which provided funding for the dataset generation
-project_id: # a list of project numbers which are identifiable in for example OpenAIER
-            # this list is ordered according project_name metadata
-project_url: # an ordered list of projects' landing pages
+# Dataset is generated wither using virtual (models) or physical(instruments)
+# infrastructures. Accordingly, it is always a good practice to indicate
+# what infrastructure was used to generate the dataset.
+# infrastructure_id should contain a list of ids of the used infrastructures.
+# The ids could be for example URLs to the instruments.
+# Attribute: optional
+# Input type: free text or fixed resolvable URIs/PIDs
+infrastructure_id: ['insert_infrastructure_id_1', 'insert_infrastructure_id_2']
 
 
-data_mode : # This attribute can take one of following values: "Raw", "Provisional", "Delayed-mode" or "Mixed", where:
-            # Raw represents unprocessed data.
-            # Provisional data means that some calibrations or editing on data may have been done, but the data is not thought to be fully processed. Refer to the history attribute for more detailed information.
-            # Delayed-mode data represents data published after all calibrations and quality control procedures have been applied on the internally recorded or best available original data. This is the best possible version of processed data.
-            # Mixed data indicates that the dataset contains data in more than one of the above states.
+# A location, thus site, where data was created.
+# Attribute: mandatory (only for measurements datasets)
+# Input type: free text
+site: 'insert_site_name'
 
-#############################
-## Publication information ##
-#############################
+# Provide a list of people who take a part in data creation.
+# List them according to the priority as FirstName LastName.
+# Attribute: mandatory
+# Input type: free text
+creator_name: ['FirstName_1 LastName_1', 'FirstName_2 LastName_2']
+
+# Provide a list of emails of data creators. The list elements must follow
+# the order of creators' names.
+# Attribute: mandatory
+# Input type: free text
+creator_email: ['creator_1_email', 'creator_2_email']
+
+# Since people to tend to change their positions or jobs email addresses tend
+# to be obsolete. To maintain a possibility of contacts a much more persistent
+# approach is to provide ORCiD ids of creators.
+# Attribute: recommended
+# Input type: fixed resolvable PID
+creator_id: ['creator_1_ORCiD', 'creator_2_ORCID']
+
+# List of creator names don't tell us much about who done what in the process
+# of data creation. creator_role provides a means to highlight a particular
+# role(s) each data creator had. The roles could be described using CredIT
+# taxonomy:
+# https://like-itn-digitalization.readthedocs.io/en/latest/1_research_lifecycle/#roles-in-lifecycle
+# Attribute: optional
+# Input type: free text or terms from controlled vocabulary
+creator_role: ['creator_1_main_role', 'creator_2_main_role']
+
+
+# Provide a list of people who contributed to data creation, but where not
+# sufficient contributors to be seen as data creators.
+# List them according to the priority as FirstName LastName.
+# Attribute: recommended
+# Input type: free text
+contributor_name: ['FirstName_1 LastName_1', 'FirstName_2 LastName_2']
+
+# Same as creator_email
+# Attribute: recommended
+# Input type: free text
+contributor_email: ['contributor_1_email', 'contributor_2_email']
+
+# Same as creator_id
+# Attribute: recommended
+# Input type: fixed resolvable PIDs
+contributor_id: ['contributor_1_ORCiD', 'contributor_2_ORCID']
+
+# Same as creator_role
+# Attribute: optional
+# Input type: free text or terms from controlled vocabulary
+contributor_role: ['contributor_1_main_role', 'contributor_2_main_role']
+
+# Provide a list of projects which provided funding for the dataset generation.
+# Attribute: recommended
+# Input type: free text
+project_name: ['project_name_1', 'project_name_2']
+
+# Provide a list of projects numbers, typically identifiable by OpenAIER.
+# The list must be ordered according to project_name.
+# Attribute: recommended
+# Input type: free text
+project_number: ['project_number_1', 'project_number_1']
+
+# In case when the project(s) has a landing page provide them.
+# The list must be ordered according to project_name.
+# Attribute: recommended
+# Input type: fixed resolvable URI
+project_url: ['project_1_home_page', 'project_2_home_page']
+
+# Provide the source of funding for projects.
+# The list must be ordered according to project_name.
+# Attribute: recommended
+# Input type: free text
+project_funder: ['project_1_funder', 'project_2_funder']
+
+
+# It is important to help users understand in what state data are. This is
+# explicitly stated in data_mode. The data_mode takes terms from controlled
+# vocabulary ["Raw", "Provisional", "Delayed-mode", "Mixed"] where:
+# - Raw represents unprocessed data
+#
+# - Provisional data means that some calibrations or editing on data may
+#   have been done, but the data is not thought to be fully processed.
+#   Refer to the history attribute for more detailed information.
+#
+# - Delayed-mode data represents data published after all calibrations and
+#   quality control procedures have been applied on the internally recorded or
+#   best available original data. This is the best possible version of
+#   processed data.
+#
+# - Mixed data indicates that the dataset contains data in more than
+#   one of the above states.
+#
+# Attribute: mandatory
+# Input type: term from controlled vocabulary
+data_mode : 'insert_data_mode'
+
+###############################################################################
+########################### Publication information ###########################
+###############################################################################
+
 license: # licence that specifies usage and distribution of dataset
 distribution_statement: # notation that marks dataset according to its security classification to ensure it is circulated only among the authorized recipients.
                         # Potentially the distribution statement could look like this:
