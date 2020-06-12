@@ -1,19 +1,56 @@
-##################################
-## Discovery and identification ##
-##################################
-short_name: # Short name of variable
-standard_name: # Variable/data stream standard name, see CF convention table for standard_name
-long_name: # Long name of variable
-alt_name: # List of alternative names of variables from known vocabularies.
-          # This should boost data re-use by broader community.
-concept_id: # Id of concept (i.e., variable) which will be used to link it to the web-hosted vocabularies
-concept_URI: # Link to the concept definition (i.e., a link to a web-hosted vocabulary)
-is_part_of: # URI/ID of dataset to which data stream belongs to
-is_related_to: # List of related variables in the dataset, provided as short_name(s)
+###############################################################################
+######################## Discovery and identification #########################
+###############################################################################
 
-######################
-## Values and units ##
-######################
+# Short name of data stream, i.e. recorded parameter/variable
+# Attribute: mandatory
+# Input type: free text
+short_name: 'insert_short_name'
+
+# Community accepted name for data stream/parameter/variable, such as
+# standard names from CF convention:
+# http://cfconventions.org/Data/cf-standard-names/72/build/cf-standard-name-table.html
+# Attribute: mandatory
+# Input type: term from controlled vocabulary
+standard_name: 'insert_standard_name'
+
+# Long name of data stream
+# Attribute: optional
+# Input type: free text
+long_name: 'insert_long_name'
+
+# List of alternative names of data stream
+# Attribute: recommended
+# Input type: list of terms from controlled vocabularies
+alt_name: ['alt_name_1', 'alt_name_2']
+
+# Id of concept which defines recorded variable which is a part of vocabulary.
+# Attribute: optional
+# Input type: controlled string
+concept_id: 'incsert_concept_id'
+
+# Resolvable URI to the metadata of the concept, which hold information such as
+# concept definition.
+# Attribute: optional
+# Input type: fixed resolvable URI
+concept_URI: 'insert_concept_URI'
+
+# PID of dataset to which data stream belongs to
+# Attribute: optional
+# Input type: fixed resolvable PID
+is_part_of: 'insert_dataset_PID'
+
+# List of short_name to other variables in the dataset to which the current
+# variable is related to
+# Attribute: optional
+# Input type: fixed terms from the current dataset
+is_related_to: ['short_name_1', 'short_name_2']
+
+
+###############################################################################
+############################# Values and units ################################
+###############################################################################
+
 dtype: # Type of data stored in the variables (e.g., int, float or double)
 units: # Variable units
 valid_min: # Minimum allowed value
