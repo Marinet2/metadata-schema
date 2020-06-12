@@ -3,8 +3,8 @@
 ######################## Discovery and identification #########################
 ###############################################################################
 
-# A dataset should have a concise title.
-# Follow the same approach like in giving titles to journal articles.
+# A dataset should have a concise title. Follow the same approach like in
+# giving titles to journal articles.
 # Attribute: mandatory
 # Input type: free text
 title: 'insert_title'
