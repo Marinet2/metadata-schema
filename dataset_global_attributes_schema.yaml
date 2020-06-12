@@ -237,10 +237,23 @@ update_interval : 'insert_update_interval_as_PnYnMnDTnHnMnS'
 ###############################################################################
 ############################### Used conventions ##############################
 ###############################################################################
+# Data format version, in a case of Marinet2 project it is "Marinet2 NetCDF 0.1"
+# Attribute: optional
+# Input type: preferable term from controlled vocabulary
+format_version: 'Marinet2 NetCDF 0.1'
 
-format_version: # data format version (could be for example "marinet2 NetCDF 2.1" or a resolvable URI)
-metadata_schema: # indicates schema used to format/describe metadata, ideally it should be a resolvable URI
-conventions: # all conventions used for naming of variables and dimensions, could be a list of resolvable URIs provided as a list
+# Indicates schema used to format/describe metadata. Ideally it should be
+# a resolvable URI, which in case of Marinet2 project is :
+# https://github.com/niva83/marinet2-metadata-schema/blob/master/dataset_global_attributes_schema.yaml
+# Attribute: recommended
+# Input type: resolvable URI
+metadata_schema: 'https://github.com/niva83/marinet2-metadata-schema/blob/master/dataset_global_attributes_schema.yaml'
+
+# Provide a list of all conventions used for naming of variables and dimensions.
+# Preferably should resolvable URIs.
+# Attribute: recommended
+# Input type: free text or resolvable URI
+conventions: ['convention_1_URI', 'convention_2_URI']
 
 
 ###############################################################################
