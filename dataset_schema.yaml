@@ -263,7 +263,7 @@ conventions: ['convention_1_URI', 'convention_2_URI']
 
 # Description of the spatio-temporal shape of the data held in the netCDF using
 # a vocabulary specified in CF 1.7:
-# http://cfconventions.org/Data/cf-conventions/cf-conventions-1.7/cf-conventions.html#featureType
+# http://cfconventions.org/cf-conventions/v1.8.0/cf-conventions.html#_features_and_feature_types
 # Attribute: recommended
 # Input type: terms from controlled vocabulary
 feature_type: 'insert_feature_type'
