@@ -261,65 +261,124 @@ conventions: ['convention_1_URI', 'convention_2_URI']
 ########################## Spatio-temporal information ########################
 ###############################################################################
 
-# top level description
-feature_type: # Description of the spatio-temporal shape of the data held in the netCDF using a vocabulary specified in CF 1.6.
-cdm_data_type: # The Unidata CDM (common data model) data type used by THREDDS. e.g. point, profile, section, station, station_profile, trajectory, grid, radial, swath, image; use Grid for gridded HFR data. Recommended.
+# Description of the spatio-temporal shape of the data held in the netCDF using
+# a vocabulary specified in CF 1.7:
+# http://cfconventions.org/Data/cf-conventions/cf-conventions-1.7/cf-conventions.html#featureType
+# Attribute: recommended
+# Input type: terms from controlled vocabulary
+feature_type: 'insert_feature_type'
 
-# spatial coverage information
-reference_system: # Either specify coordinate system in a form of "EPSG:epsg_code" or write "CUSTOM"
-coordinate_mapping: # specifies how relative x, y and z coordinates are mapped to absolute one, if reference_system: "CUSTOM" then coordinate_mapping can be dropped
-  - name: "x"
-    value: # insert to what abs coordinate it is mapped, if reference_system: "EPSG:4326"
-           # value will be set to "longitude"
-  - name: "y"
-    value: # insert to what abs coordinate it is mapped, if reference_system: "EPSG:4326"
-           # value will be set to "latitude"
-  - name: "z"
-    value: # it can be either 'height' or 'depth'
+# The Unidata CDM (common data model) data type used by THREDDS. There is a
+# controlled vocabulary containing following elements:
+# [point, profile, section, station, station_profile, trajectory, grid, radial, swath, image]
+# Attribute: recommended
+# Input type: terms from controlled vocabulary
+cdm_data_type: 'insert_cdm_data_type'
 
-spatial_x_min: # insert min x
-spatial_x_max: # insert max x
-spatial_x_units: # insert units for x
-spatial_x_resolution: # insert resolution for x (optional)
 
-spatial_y_min: # insert min y
-spatial_y_max: # insert may y
-spatial_y_units: # insert units for y
-spatial_y_resolution: # insert resolution for y (optional)
+# In case your data is spatially structured provide reference coordinate system.
+# Attribute: recommended
+# Input type: either "EPSG:epsg_code" or write "CUSTOM" for custom coord systems
+coordinate_reference_system: "insert_reference_system"
 
-spatial_z_min: # insert min z
-spatial_z_max: # insert maz z
-spatial_z_units: # insert units for z
-spatial_z_resolution: # insert resolution for z (optional)
+# Specifies how relative x, y and z coordinates are mapped to absolute one.
+# if coordinate_reference_system: "CUSTOM" then coordinate_mapping can be dropped
+# Attribute: recommended
+# Input type: free text
+coordinate_mapping:
+  - name: 'x'
+    value: 'insert_mapping_coordinate'
+  - name: 'y'
+    value: 'insert_mapping_coordinate'
+  - name: 'z'
+    # z can map to for example height above ground or depth
+    value: 'insert_mapping_coordinate'
 
-# temporal coverage information
-time_coverage_start: # Start date of the data in UTC. Time must be specified as a string according to the ISO8601 standard: "YYYY-MM-DDThh:mm:ssZ”.
-time_coverage_end: # Final date of the data in UTC. Time must be specified as a string according to the ISO8601 standard: "YYYY-MM-DDThh:mm:ssZ”.
-time_coverage_resolution: #Interval between records. ISO8601 standard must be used: PnYnMnDTnHnMnS.
-time_coverage_duration: #Duration of the time coverage of the data. ISO8601 standard must be used: PnYnMnDTnHnMnS.
+# Minimum coordinate x
+# Attribute: recommended
+# Input type: numbers
+spatial_x_min: 'insert_x_min'
+
+# Maximum coordinate x
+# Attribute: recommended
+# Input type: numbers
+spatial_x_max: 'insert_x_max'
+
+# Units for expressing values of x coordinates
+# Attribute: recommended
+# Input type: preferably SI units
+spatial_x_units: 'insert_x_units'
+
+# In case we have a gridded data provide resolution of grid along x axis
+# Attribute: recommended
+# Input type: numbers
+spatial_x_resolution: 'insert_x_resolution'
+
+# same as attributes related to x axis
+spatial_y_min: 'insert_y_min'
+spatial_y_max: 'insert_y_max'
+spatial_y_units: 'insert_y_units'
+spatial_y_resolution: 'insert_y_units'
+
+# same as attributes related to x axis
+spatial_z_min: 'insert_z_min'
+spatial_z_max: 'insert_z_max'
+spatial_z_units: 'insert_z_units'
+spatial_z_resolution: 'insert_z_units'
+
+
+# Provide start date of the data in UTC. Time must be specified as a string
+# according to the ISO8601 standard: "YYYY-MM-DDThh:mm:ssZ”.
+# Attribute: recommended
+# Input type: string which follows ISO8601 YYYY-MM-DDThh:mm:ssZ format
+time_coverage_start: 'insert_start_date_of_data_in_ISO8601'
+
+# Final date of the data in UTC. Time must be specified as a string according
+# to the ISO8601 standard: "YYYY-MM-DDThh:mm:ssZ”.
+# Attribute: recommended
+# Input type: string which follows ISO8601 YYYY-MM-DDThh:mm:ssZ format
+time_coverage_end:  'insert_stop_date_of_data_in_ISO8601'
+
+#Interval between records. ISO8601 standard must be used: PnYnMnDTnHnMnS.
+# Attribute: recommended
+# Input type: string which follows ISO8601 PnYnMnDTnHnMnS format
+time_coverage_resolution: 'insert_temporal_resolution_of_data_in_ISO8601'
+
+#Duration of the time coverage of the data.
+# ISO8601 standard must be used: PnYnMnDTnHnMnS.
+# Attribute: recommended
+# Input type: string which follows ISO8601 PnYnMnDTnHnMnS format
+time_coverage_duration: 'insert_total_duration_of_data_in_ISO8601'
 
 ###############################################################################
 ############################### Data provenance ###############################
 ###############################################################################
 
-# The date on which the data file was created.
-# Version date and time for the data contained in the file. (UTC).
-# Time must be specified as a string according to the ISO8601 standard: "YYYY-MM- DDThh:mm:ssZ”.
+# The date on which the data file was created. Time must be specified as a
+# string according to the ISO8601 standard: "YYYY-MM- DDThh:mm:ssZ”.
+# Attribute: mandatory
+# Input type: string which follows ISO8601 YYYY-MM-DDThh:mm:ssZ format
 date_create: 'insert_creation_date'
 
 # Timestamp specifying when the contents (i.e. its attributes and/or values)
-# of the file were last changed Time must be specified as a string according to the ISO8601 standard: "YYYY-MM-DDThh:mm:ssZ”
-#
+# of the file were last changed. Time must be specified as a string according
+# to the ISO8601 standard: "YYYY-MM-DDThh:mm:ssZ”. If data were not changed
+# from the time of creation date_update will be same as date_create.
+# Attribute: mandatory
+# Input type: string which follows ISO8601 YYYY-MM-DDThh:mm:ssZ format
 date_update: 'insert_date_of_last_update'
 
-# Provides an audit trail for modifications to the original data.
-# It should contain a separate line for each modification, with each line beginning with a timestamp, and including user name,
-# modification name, and modification arguments. The time stamp must be specified as a string according to the ISO8601 standard: "YYYY-MM-DDThh:mm:ssZ”.
-history: ['']
+# Provides an audit trail for modifications to the original data. It should
+# contain a separate line for each modification, with each line beginning with
+# a timestamp in the ISO8601 standard: "YYYY-MM-DDThh:mm:ssZ”, and including
+# names of people who introduce changes, and modification arguments.
+# Attribute: recommended
+# Input type: list of strings / free text
+history: ['modification_1', 'modification_2']
 
 
-# Level of processing and quality control applied to data. This probably cannot be generic and it will depend on the community.
-# For example in case of lidars these levels are:
+# Level of processing and quality control applied to data.
+# In case of wind lidar data these levels should be used to describe data:
 # LEVEL 0: Backscatter signal
 # LEVEL 1A: Individual Doppler spectra
 # LEVEL 1B: QC (i.e. filtered) Individual Doppler spectra
@@ -329,4 +388,6 @@ history: ['']
 # LEVEL 2C: Estimated averaged QC radial velocity
 # LEVEL 3: Reconstructed wind
 # LEVEL 4: Extracted flow related parameters (e.g., wind turbine wake width)
-processing_level:
+# Attribute: recommended
+# Input type: free text
+processing_level: 'insert_processing_level'
