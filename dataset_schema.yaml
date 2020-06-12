@@ -248,7 +248,7 @@ format_version: 'Marinet2 NetCDF 0.1'
 # https://github.com/niva83/marinet2-metadata-schema/blob/master/dataset_global_attributes_schema.yaml
 # Attribute: recommended
 # Input type: resolvable URI
-metadata_schema: 'https://github.com/niva83/marinet2-metadata-schema/blob/master/dataset_global_attributes_schema.yaml'
+metadata_schema: 'https://github.com/Marinet2/metadata-schema/blob/master/dataset_schema.yaml'
 
 # Provide a list of all conventions used for naming of variables and dimensions.
 # Preferably should resolvable URIs.
