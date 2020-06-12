@@ -237,8 +237,9 @@ update_interval : 'insert_update_interval_as_PnYnMnDTnHnMnS'
 ###############################################################################
 ############################### Used conventions ##############################
 ###############################################################################
+
 # Data format version, in a case of Marinet2 project it is "Marinet2 NetCDF 0.1"
-# Attribute: optional
+# Attribute: recommended
 # Input type: preferable term from controlled vocabulary
 format_version: 'Marinet2 NetCDF 0.1'
 
