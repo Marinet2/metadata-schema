@@ -191,16 +191,21 @@ publisher_url: # The data publisher's url.
 citation: # The citation to be used in publications using the dataset.
 update_interval : # in case if dataset is periodically updated (i.e., if this is dynamic dataset) otherwise leave it empty
 
-######################
-## Used conventions ##
-######################
+
+
+###############################################################################
+############################### Used conventions ##############################
+###############################################################################
+
 format_version: # data format version (could be for example "marinet2 NetCDF 2.1" or a resolvable URI)
 metadata_schema: # indicates schema used to format/describe metadata, ideally it should be a resolvable URI
 conventions: # all conventions used for naming of variables and dimensions, could be a list of resolvable URIs provided as a list
 
-#################################
-## Spatio-temporal information ##
-#################################
+
+###############################################################################
+########################## Spatio-temporal information ########################
+###############################################################################
+
 # top level description
 feature_type: # Description of the spatio-temporal shape of the data held in the netCDF using a vocabulary specified in CF 1.6.
 cdm_data_type: # The Unidata CDM (common data model) data type used by THREDDS. e.g. point, profile, section, station, station_profile, trajectory, grid, radial, swath, image; use Grid for gridded HFR data. Recommended.
@@ -238,9 +243,10 @@ time_coverage_end: # Final date of the data in UTC. Time must be specified as a 
 time_coverage_resolution: #Interval between records. ISO8601 standard must be used: PnYnMnDTnHnMnS.
 time_coverage_duration: #Duration of the time coverage of the data. ISO8601 standard must be used: PnYnMnDTnHnMnS.
 
-#####################
-## Data provenance ##
-#####################
+###############################################################################
+############################### Data provenance ###############################
+###############################################################################
+
 date_create: # The date on which the data file was created.
               # Version date and time for the data contained in the file. (UTC).
               # Time must be specified as a string according to the ISO8601 standard: "YYYY-MM- DDThh:mm:ssZ”.
