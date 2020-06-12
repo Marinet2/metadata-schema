@@ -1,23 +1,57 @@
 
-##################################
-## Discovery and identification ##
-##################################
+###############################################################################
+######################## Discovery and identification #########################
+###############################################################################
 
-title: # Title of dataset to be inserted here
-summary: # Short summary of dataset
+# A dataset should have a concise title.
+# Follow the same approach like in giving titles to journal articles.
+# Attribute: mandatory
+title: 'insert_title'
 
-keywords: # keywords that further explains dataset provided as list: ['keyword 1', 'keyword 2', ..., 'keyword N']
-          # keywords ideally should be sourced from an established/community-driven vocabulary of terms
-          # alternatively instead of keywords you could provide resolvable URIs of keywords, e.g. :
-          # instead of writing 'wind direction', one can provide URI instead http://vocab.nerc.ac.uk/collection/P09/current/WDIR/
-keywords_vocabulary: # when some or all keywords are sourced from restricted vocabularies provide a list of
-                     # URI's to the restricted vocabularies from where the keywords are sourced.
-                     # e.g.: ['http://cfconventions.org/Data/cf-standard-names/71/build/cf-standard-name-table.html', 'http://data.windenergy.dtu.dk/taxonomy/', 'http://vocab.nerc.ac.uk/collection/P09/current/']
+# A dataset should have a descriptive summary allowing users to understand
+# better what the dataset is about and for what it can be used for.
+# Attribute: mandatory
+summary: 'insert_summary'
 
-dataset_id: # unique and persistent identifier of dataset, e.g. DOI
-dataset_id_authority: # an URI of the authority body that generated dataset_id
-is_part_of: # in case a dataset is a part of data collection, provide data collection DOI/URI
-is_related_to: # DOI (URI) to a related resources (e.g., if a dataset is split to multiple files this element holds links/files names of remaining files)
+# Dataset keywords are similar like journal paper keywords. They highlight
+# particularities of the given dataset. Ideally keywords should be sourced
+# from control vocabularies which are used by communities.
+# Keywords should be provided as a list.
+# Attribute: mandatory
+keywords: ['insert_keyword_1','insert_keyword_2']
+
+
+# If some or all keywords are sourced from controlled vocabularies it is a good
+# practice to provide a list of the controlled vocabulary URI's from where the
+# keywords are sourced from. One example is taxonomy of wind energy topics:
+# 'http://data.windenergy.dtu.dk/taxonomy/'
+# Attribute: recommended
+keywords_vocabulary: ['insert_vocab_URI_1','insert_vocab_URI_2']
+
+# To identify dataset you need to provide a unique & persistent identifier(PID).
+# The most obvious candidate for dataset PID is DOI.
+# A way to obtain it prior publishing your dataset is to make a DOI reservation.
+# Then simply insert the reserved DOI here.
+# PIDs should be resolvable.
+# Attribute: mandatory
+dataset_id: 'insert_PID'
+
+# An URI of the authority body that generated dataset_id
+# Attribute: recommended
+dataset_id_authority: 'insert_authority_body_URL'
+
+# If dataset is a part of larger data collection is_part_of provides the
+# link to the collection. For example, data collection will have PID, such as
+# DOI. Therefore, is_part_of will contain that PID.
+# Attribute: recommended
+is_part_of: 'insert_data_collection_PID'
+
+
+# If the entire dataset is split to multiple files into multiple files
+# is_related_to holds ids of remaining files which make dataset complete.
+# The ids of remaining files could be simple as file names.
+# Attribute: mandatory (if dataset is split to multiple files)
+is_related_to: ['id_file_1', 'id_file_2']
 
 infrastructure_id: # a list of PIDs or URIs (in the worst case infrastructure names) to virtual (models, HPC) or physical (instruments) infrastructure(s) which generated dataset
 site: # location where data was created, this is mandatory only for measurements datasets otherwise it can be dropped
