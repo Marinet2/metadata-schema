@@ -25,12 +25,17 @@ long_name: 'insert_long_name'
 alt_name: ['alt_name_1', 'alt_name_2']
 
 # Id of concept which defines recorded variable which is a part of vocabulary.
+# For example, if data stream represents values of ‘wind direction’ the concept
+# of wind direction is defined in NERC vocabulary under id WDIR.
+# Accordingly, one should set concept_id=’WDIR’.
 # Attribute: optional
 # Input type: controlled string
-concept_id: 'incsert_concept_id'
+concept_id: 'insert_concept_id'
 
 # Resolvable URI to the metadata of the concept, which hold information such as
-# concept definition.
+# concept definition. If use the above example of the wind direction concept,
+# then URI for this concept is:
+# http://vocab.nerc.ac.uk/collection/P09/current/WDIR/
 # Attribute: optional
 # Input type: fixed resolvable URI
 concept_URI: 'insert_concept_URI'
@@ -51,20 +56,70 @@ is_related_to: ['short_name_1', 'short_name_2']
 ############################# Values and units ################################
 ###############################################################################
 
-dtype: # Type of data stored in the variables (e.g., int, float or double)
-units: # Variable units
-valid_min: # Minimum allowed value
-valid_max: # Maximum allowed value
-valid_range: # Range expressed as [valid_min, valid_max] when variable is continuous
-allowed_values: # List of specific values that the variable can take in case it is discreet
-uncertainty: # Uncertainty of variable values
-_FillValue: # Fill values must be chosen according to the variable data type (int, float, double)
-            # typically it is set to NaN considering that the majority of our variables are floats
-add_offset: # Offset value to be added to all the values of the variable.
-            # This is used to save space by switching from float to int
-scale_factor: # Scaling value to be multiplied to all the values of the variable
-              # This is used to save space by switching from float to int
-compression_type:  # Compression type
-compression_level: # Level of compression of variables
+# Type of data stored in the variables
+# Attribute: mandatory
+# Input type: term from controlled vocabulary [str,int, float or double]
+dtype: 'insert_data_type'
+
+# Units for values of variable
+# Attribute: mandatory
+# Input type: string representing canonical units
+units: 'insert_units'
+
+# Minimum allowed/expected value of the data stream
+# Attribute: optional
+# Input type: number
+valid_min: 'insert_valid_min'
+
+# Maximum allowed/expected value of the data stream
+# Attribute: optional
+# Input type: number
+valid_max: 'insert_valid_max'
+
+# A range of values of a given data stream expressed as [valid_min, valid_max]
+# in case when the data stream takes any value between the given extremes.
+# Attribute: optional
+# Input type: list of numbers
+valid_range: ['insert_valid_min', 'insert_valid_max']
+
+# List of specific values that the variable can take.
+# Attribute: optional
+# Input type: list of numbers
+allowed_values: ['value_1', 'value_2']
+
+# Uncertainty of variable values. The uncertainty is expressed in same units
+# as the variable itself.
+# Attribute: optional
+# Input type: number
+uncertainty: 'insert_uncertainty'
+
+# Insert a value that will be used to fill in missing values of the variable.
+# Fill values must be chosen according to the variable data type (int, float, double)
+# typically it is set to NaN considering that the majority of our variables are floats
+# Attribute: mandatory
+# Input type: same as dtype
+_FillValue: 'insert_FillValue'
+
+# Offset value to be added to all the values of the variable.
+# This is used to save space by switching from float to int for variable values.
+# Attribute: mandatory
+# Input type: number
+add_offset: 'insert_offset'
+
+# Scaling value to be multiplied to all the values of the variable.
+# This is used to save space by switching from float to int for variable values.
+# Attribute: mandatory
+# Input type: number
+scale_factor: 'insert_scale_factor'
+
+# In case if compression is applied to data provide its type.
+# Attribute: optional
+# Input type: free text
+compression_type:  'insert_compression_type'
+
+# Level of compression applied to data.
+# Attribute: optional
+# Input type: free text
+compression_level: 'insert_compression_level'
 
 
