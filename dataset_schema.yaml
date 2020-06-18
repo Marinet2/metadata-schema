@@ -75,10 +75,10 @@ infrastructure_id: ['insert_infrastructure_id_1', 'insert_infrastructure_id_2']
 site: 'insert_site_name'
 
 # Provide a list of people who take a part in data creation.
-# List them according to the priority as FirstName LastName.
+# List them according to the priority as LastName FirstName.
 # Attribute: mandatory
 # Input type: free text
-creator_name: ['FirstName_1 LastName_1', 'FirstName_2 LastName_2']
+creator_name: ['LastName_1 FirstName_1', 'LastName_2 FirstName_2']
 
 # Provide a list of emails of data creators. The list elements must follow
 # the order of creators' names.
@@ -105,10 +105,10 @@ creator_role: ['creator_1_main_role', 'creator_2_main_role']
 
 # Provide a list of people who contributed to data creation, but where not
 # sufficient contributors to be seen as data creators.
-# List them according to the priority as FirstName LastName.
+# List them according to the priority as LastName FirstName.
 # Attribute: recommended
 # Input type: free text
-contributor_name: ['FirstName_1 LastName_1', 'FirstName_2 LastName_2']
+contributor_name: ['LastName_1 FirstName_1', 'LastName_2 FirstName_2']
 
 # Same as creator_email
 # Attribute: recommended
