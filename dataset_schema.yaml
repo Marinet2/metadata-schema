@@ -130,11 +130,11 @@ contributor_role: ['contributor_1_main_role', 'contributor_2_main_role']
 # Input type: free text
 project_name: ['project_name_1', 'project_name_2']
 
-# Provide a list of projects numbers, typically identifiable by OpenAIER.
+# Provide a list of projects ids assigned by the project funder.
 # The list must be ordered according to project_name.
 # Attribute: recommended
 # Input type: free text
-project_number: ['project_number_1', 'project_number_1']
+project_id: ['project_id_1', 'project_id_2']
 
 # In case when the project(s) has a landing page provide them.
 # The list must be ordered according to project_name.
