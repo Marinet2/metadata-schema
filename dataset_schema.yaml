@@ -2,6 +2,20 @@
 ######################## Discovery and identification #########################
 ###############################################################################
 
+# To identify dataset you need to provide a unique & persistent identifier(PID).
+# The most obvious candidate for dataset PID is DOI.
+# A way to obtain it prior publishing your dataset is to make a DOI reservation.
+# Then simply insert the reserved DOI here.
+# PIDs should be resolvable.
+# Attribute: mandatory
+# Input type: fixed resolvable PID
+dataset_id: 'insert_PID'
+
+# An URI of the authority body that generated dataset_id
+# Attribute: recommended
+# Input type: fixed resolvable URI
+dataset_id_authority: 'insert_authority_body_URL'
+
 # A dataset should have a concise title. Follow the same approach like in
 # giving titles to journal articles.
 # Attribute: mandatory
@@ -30,20 +44,6 @@ keywords: ['insert_keyword_1','insert_keyword_2']
 # Attribute: recommended
 # Input type: fixed resolvable URIs
 keywords_vocabulary: ['insert_vocab_URI_1','insert_vocab_URI_2']
-
-# To identify dataset you need to provide a unique & persistent identifier(PID).
-# The most obvious candidate for dataset PID is DOI.
-# A way to obtain it prior publishing your dataset is to make a DOI reservation.
-# Then simply insert the reserved DOI here.
-# PIDs should be resolvable.
-# Attribute: mandatory
-# Input type: fixed resolvable PID
-dataset_id: 'insert_PID'
-
-# An URI of the authority body that generated dataset_id
-# Attribute: recommended
-# Input type: fixed resolvable URI
-dataset_id_authority: 'insert_authority_body_URL'
 
 # If dataset is a part of larger data collection is_part_of provides the
 # link to the collection. For example, data collection will have PID, such as
