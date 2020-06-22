@@ -1,0 +1,387 @@
+###############################################################################
+######################## Discovery and identification #########################
+###############################################################################
+
+
+title: 'Submission to ALEX17 Diurnal Cycles Benchmark'
+
+summary: 'Submission to the ALEX17 Diurnal Cycles Benchmark - a large domain in complex terrain. https://thewindvaneblog.com/alex17-diurnal-cycles-benchmark-a-large-domain-in-complex-terrain-b5029e94485'
+
+# Dataset keywords are similar like journal paper keywords. They highlight
+# particularities of the given dataset. Ideally keywords should be sourced
+# from control vocabularies which are used by communities.
+# Keywords should be provided as a list.
+# Attribute: mandatory
+# Input type: free text or terms from controlled vocabulary
+keywords: ['Meteorological','Flow','Modeling','Onshore','Complex','Forest','Rural','wind speed']
+
+
+# If some or all keywords are sourced from controlled vocabularies it is a good
+# practice to provide a list of the controlled vocabulary URI's from where the
+# keywords are sourced from. One example is taxonomy of wind energy topics:
+# 'http://data.windenergy.dtu.dk/taxonomy/'
+# Attribute: recommended
+# Input type: fixed resolvable URIs
+keywords_vocabulary: ['http://data.windenergy.dtu.dk/taxonomy/']
+
+# To identify dataset you need to provide a unique & persistent identifier(PID).
+# The most obvious candidate for dataset PID is DOI.
+# A way to obtain it prior publishing your dataset is to make a DOI reservation.
+# Then simply insert the reserved DOI here.
+# PIDs should be resolvable.
+# Attribute: mandatory
+# Input type: fixed resolvable PID
+dataset_id: ''
+
+# An URI of the authority body that generated dataset_id
+# Attribute: recommended
+# Input type: fixed resolvable URI
+dataset_id_authority: ''
+
+# If dataset is a part of larger data collection is_part_of provides the
+# link to the collection. For example, data collection will have PID, such as
+# DOI. Therefore, is_part_of will contain that PID.
+# Attribute: recommended
+# Input type: fixed resolvable PID
+is_part_of: ''
+
+# If the entire dataset is split to multiple files into multiple files
+# is_related_to holds ids of remaining files which make dataset complete.
+# The ids of remaining files could be simple as file names.
+# Attribute: mandatory (if dataset is split to multiple files)
+# Input type: fixed resolvable PIDs
+is_related_to: ['']
+
+# Dataset is generated wither using virtual (models) or physical(instruments)
+# infrastructures. Accordingly, it is always a good practice to indicate
+# what infrastructure was used to generate the dataset.
+# infrastructure_id should contain a list of ids of the used infrastructures.
+# The ids could be for example URLs to the instruments.
+# Attribute: optional
+# Input type: free text or fixed resolvable URIs/PIDs
+infrastructure_id: ['']
+
+
+# A location, thus site, where data was created.
+# Attribute: mandatory (only for measurements datasets)
+# Input type: free text
+site: 'Alaiz'
+
+# Provide a list of people who take a part in data creation.
+# List them according to the priority as FirstName LastName.
+# Attribute: mandatory
+# Input type: free text
+creator_name: ['']
+
+# Provide a list of emails of data creators. The list elements must follow
+# the order of creators' names.
+# Attribute: mandatory
+# Input type: free text
+creator_email: ['']
+
+# Since people to tend to change their positions or jobs email addresses tend
+# to be obsolete. To maintain a possibility of contacts a much more persistent
+# approach is to provide ORCiD ids of creators.
+# Attribute: recommended
+# Input type: fixed resolvable PID
+creator_id: ['']
+
+# List of creator names don't tell us much about who done what in the process
+# of data creation. creator_role provides a means to highlight a particular
+# role(s) each data creator had. The roles could be described using CredIT
+# taxonomy:
+# https://like-itn-digitalization.readthedocs.io/en/latest/1_research_lifecycle/#roles-in-lifecycle
+# Attribute: optional
+# Input type: free text or terms from controlled vocabulary
+creator_role: ['']
+
+
+# Provide a list of people who contributed to data creation, but where not
+# sufficient contributors to be seen as data creators.
+# List them according to the priority as FirstName LastName.
+# Attribute: recommended
+# Input type: free text
+contributor_name: ['']
+
+# Same as creator_email
+# Attribute: recommended
+# Input type: free text
+contributor_email: ['']
+
+# Same as creator_id
+# Attribute: recommended
+# Input type: fixed resolvable PIDs
+contributor_id: ['']
+
+# Same as creator_role
+# Attribute: optional
+# Input type: free text or terms from controlled vocabulary
+contributor_role: ['']
+
+# Provide a list of projects which provided funding for the dataset generation.
+# Attribute: recommended
+# Input type: free text
+project_name: ['Marinet2']
+
+# Provide a list of projects numbers, typically identifiable by OpenAIER.
+# The list must be ordered according to project_name.
+# Attribute: recommended
+# Input type: free text
+project_number: ['731084']
+
+# In case when the project(s) has a landing page provide them.
+# The list must be ordered according to project_name.
+# Attribute: recommended
+# Input type: fixed resolvable URI
+project_url: ['http://www.marinet2.eu/']
+
+# Provide the source of funding for projects.
+# The list must be ordered according to project_name.
+# Attribute: recommended
+# Input type: free text
+project_funder: ['H2020-EU.1.4.1.2.']
+
+
+# It is important to help users understand in what state data are. This is
+# explicitly stated in data_mode. The data_mode takes terms from controlled
+# vocabulary ["Raw", "Provisional", "Delayed-mode", "Mixed"] where:
+# - Raw represents unprocessed data
+#
+# - Provisional data means that some calibrations or editing on data may
+#   have been done, but the data is not thought to be fully processed.
+#   Refer to the history attribute for more detailed information.
+#
+# - Delayed-mode data represents data published after all calibrations and
+#   quality control procedures have been applied on the internally recorded or
+#   best available original data. This is the best possible version of
+#   processed data.
+#
+# - Mixed data indicates that the dataset contains data in more than
+#   one of the above states.
+#
+# Attribute: mandatory
+# Input type: term from controlled vocabulary
+data_mode : 'Delayed-mode'
+
+###############################################################################
+########################### Publication information ###########################
+###############################################################################
+
+# Licence that specifies usage of dataset. You must provide the license since
+# without it end-users do not have information on how they can use your data.
+# You could provide a full text of license, which would be a case if your
+# dataset has a special data usage license. However, in majority of cases you
+# will use Create Commons license, which in this case you can provide the
+# license name (e.g., CC BY 4.0 International).
+# Alternately, provide a URL to the license.
+# Attribute: mandatory
+# Input type: text defined by license, license ID or license URL
+license: 'Creative Commons Attribution 4.0'
+
+# Notation that marks dataset according to its security classification to ensure
+# it is circulated only among the authorized recipients.
+# Potentially the distribution statement could look like this:
+# Statement A: Approved for public release; distribution is unlimited.
+#
+# Statement B: Approved for public release; distribution is defined by license.
+#
+# Statement C: Distribution authorized to (insert authorized entities) only;
+# (fill in reason); (date of determination). Other requests for this document
+# shall be referred to (insert controlling government office).
+#
+# Statement D: Distribution authorized to (insert authorized entities) and
+# their contractors; (fill in reason); (date of determination). Other requests
+# for this document shall be referred to (insert controlling government office).
+#
+# Attribute: optional
+# Input type: free text
+distribution_statement: 'Approved for public release; distribution is defined by license.'
+
+# The data publisher's name. The publisher may be an individual or an institution.
+# Attribute: mandatory
+# Input type: free text
+publisher_name: ''
+
+# The data publisher's email.
+# The publisher email may be an individual or of an institution.
+# Attribute: recommended
+# Input type: free text
+publisher_email: ''
+
+# The data publisher's url.
+# The publisher may be an individual or an institution.
+# Attribute: recommended
+# Input type: free text
+publisher_url: ''
+
+# The citation to be used in publications using the dataset.
+# The explicit text stating how to cite the dataset.
+# Attribute: optional
+# Input type: free text
+citation: ''
+
+# In case if dataset is periodically updated (i.e., if this is dynamic dataset)
+# it is important to provide information on how frequently dataset is updated.
+# Attribute: mandatory for dynamic datasets otherwise optional
+# Input type: ISO8601 standard must be used: PnYnMnDTnHnMnS.
+update_interval : ''
+
+
+###############################################################################
+############################### Used conventions ##############################
+###############################################################################
+
+# Data format version, in a case of Marinet2 project it is "Marinet2 NetCDF 0.1"
+# Attribute: recommended
+# Input type: preferable term from controlled vocabulary
+format_version: 'Marinet2 NetCDF 0.1'
+
+# Indicates schema used to format/describe metadata. Ideally it should be
+# a resolvable URI, which in case of Marinet2 project is :
+# https://github.com/niva83/marinet2-metadata-schema/blob/master/dataset_global_attributes_schema.yaml
+# Attribute: recommended
+# Input type: resolvable URI
+metadata_schema: 'https://github.com/Marinet2/metadata-schema/blob/master/dataset_schema.yaml'
+
+# Provide a list of all conventions used for naming of variables and dimensions.
+# Preferably should resolvable URIs.
+# Attribute: recommended
+# Input type: free text or resolvable URI
+conventions: ['http://cfconventions.org/', 'https://github.com/wind-energy/variables-dictionary']
+
+
+###############################################################################
+########################## Spatio-temporal information ########################
+###############################################################################
+
+# Description of the spatio-temporal shape of the data held in the netCDF using
+# a vocabulary specified in CF 1.7:
+#  http://cfconventions.org/Data/cf-conventions/cf-conventions-1.8/cf-conventions.html#time-series-profiles
+# Attribute: recommended
+# Input type: terms from controlled vocabulary
+feature_type: 'timeSeriesProfile'
+
+# The Unidata CDM (common data model) data type used by THREDDS. There is a
+# controlled vocabulary containing following elements:
+# [point, profile, section, station, station_profile, trajectory, grid, radial, swath, image]
+# Attribute: recommended
+# Input type: terms from controlled vocabulary
+cdm_data_type: ''
+
+
+# In case your data is spatially structured provide reference coordinate system.
+# Attribute: recommended
+# Input type: either "EPSG:epsg_code" or write "CUSTOM" for custom coord systems
+coordinate_reference_system: "CUSTOM"
+
+# Specifies how relative x, y and z coordinates are mapped to absolute one.
+# if coordinate_reference_system: "CUSTOM" then coordinate_mapping can be dropped
+# Attribute: recommended
+# Input type: free text
+
+#coordinate_mapping:
+#  - name: 'x'
+#    value: 'projection_x_coordinate'
+#  - name: 'y'
+#    value: 'projection_y_coordinate'
+#  - name: 'z'
+#    # z can map to for example height above ground or depth
+#    value: 'height'
+
+# Minimum coordinate x
+# Attribute: recommended
+# Input type: numbers
+spatial_x_min: 'auto'
+
+# Maximum coordinate x
+# Attribute: recommended
+# Input type: numbers
+spatial_x_max: 'auto'
+
+# Units for expressing values of x coordinates
+# Attribute: recommended
+# Input type: preferably SI units
+spatial_x_units: 'auto'
+
+# In case we have a gridded data provide resolution of grid along x axis
+# Attribute: recommended
+# Input type: numbers
+spatial_x_resolution: ''
+
+# same as attributes related to x axis
+spatial_y_min: 'auto'
+spatial_y_max: 'auto'
+spatial_y_units: 'auto'
+spatial_y_resolution: ''
+
+# same as attributes related to x axis
+spatial_z_min: 'auto'
+spatial_z_max: 'auto'
+spatial_z_units: 'auto'
+spatial_z_resolution: ''
+
+
+# Provide start date of the data in UTC. Time must be specified as a string
+# according to the ISO8601 standard: "YYYY-MM-DDThh:mm:ssZ”.
+# Attribute: recommended
+# Input type: string which follows ISO8601 YYYY-MM-DDThh:mm:ssZ format
+time_coverage_start: 'auto'
+
+# Final date of the data in UTC. Time must be specified as a string according
+# to the ISO8601 standard: "YYYY-MM-DDThh:mm:ssZ”.
+# Attribute: recommended
+# Input type: string which follows ISO8601 YYYY-MM-DDThh:mm:ssZ format
+time_coverage_end:  'auto'
+
+#Interval between records. ISO8601 standard must be used: PnYnMnDTnHnMnS.
+# Attribute: recommended
+# Input type: string which follows ISO8601 PnYnMnDTnHnMnS format
+time_coverage_resolution: 'auto'
+
+#Duration of the time coverage of the data.
+# ISO8601 standard must be used: PnYnMnDTnHnMnS.
+# Attribute: recommended
+# Input type: string which follows ISO8601 PnYnMnDTnHnMnS format
+time_coverage_duration: 'auto'
+
+###############################################################################
+############################### Data provenance ###############################
+###############################################################################
+
+# The date on which the data file was created. Time must be specified as a
+# string according to the ISO8601 standard: "YYYY-MM- DDThh:mm:ssZ”.
+# Attribute: mandatory
+# Input type: string which follows ISO8601 YYYY-MM-DDThh:mm:ssZ format
+date_create: 'auto'
+
+# Timestamp specifying when the contents (i.e. its attributes and/or values)
+# of the file were last changed. Time must be specified as a string according
+# to the ISO8601 standard: "YYYY-MM-DDThh:mm:ssZ”. If data were not changed
+# from the time of creation date_update will be same as date_create.
+# Attribute: mandatory
+# Input type: string which follows ISO8601 YYYY-MM-DDThh:mm:ssZ format
+date_update: 'auto'
+
+# Provides an audit trail for modifications to the original data. It should
+# contain a separate line for each modification, with each line beginning with
+# a timestamp in the ISO8601 standard: "YYYY-MM-DDThh:mm:ssZ”, and including
+# names of people who introduce changes, and modification arguments.
+# Attribute: recommended
+# Input type: list of strings / free text
+history: ['']
+
+
+# Level of processing and quality control applied to data.
+# In case of wind lidar data these levels should be used to describe data:
+# LEVEL 0: Backscatter signal
+# LEVEL 1A: Individual Doppler spectra
+# LEVEL 1B: QC (i.e. filtered) Individual Doppler spectra
+# LEVEL 1C: QC Averaged Doppler spectra
+# LEVEL 2A: Estimated non-averaged radial velocity
+# LEVEL 2B: Estimated non-averaged QC radial velocity
+# LEVEL 2C: Estimated averaged QC radial velocity
+# LEVEL 3: Reconstructed wind
+# LEVEL 4: Extracted flow related parameters (e.g., wind turbine wake width)
+# Attribute: recommended
+# Input type: free text
+processing_level: ''
