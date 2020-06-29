@@ -59,14 +59,14 @@ keywords_vocabulary: ['insert_vocab_URI_1','insert_vocab_URI_2']
 # Input type: fixed resolvable PID
 is_part_of: 'insert_data_collection_PID'
 
-# If the entire dataset is split to multiple files into multiple files
+# If the entire dataset is split to multiple files 
 # is_related_to holds ids of remaining files which make dataset complete.
 # The ids of remaining files could be simple as file names.
 # Attribute: mandatory (if dataset is split to multiple files)
 # Input type: fixed resolvable PIDs
 is_related_to: ['insert_id_file_1', 'insert_id_file_2']
 
-# Dataset is generated wither using virtual (models) or physical(instruments)
+# Dataset is generated either using virtual (models) or physical(instruments)
 # infrastructures. Accordingly, it is always a good practice to indicate
 # what infrastructure was used to generate the dataset.
 # infrastructure_id should contain a list of ids of the used infrastructures.
