@@ -1,6 +1,6 @@
 # MaRINET2 metadata schemas
 This repository contains MaRINET2 metadata schemas for :
-- [Data streams](./datastream_schema.yaml), where data stream represents recorded values of one or more variables coming from the same data source
+- [Data streams](./datastream_schema.yaml), where data stream represents recorded values of one variable
  
 - [Datasets](./dataset_schema.yaml), where dataset represents collection of one or multiple data streams
 
